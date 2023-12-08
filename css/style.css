@@ -1,0 +1,96 @@
+.top {
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    padding-top: 15px;
+    background: url("../images/files.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 50px;
+}
+
+.top h1 {
+    COLOR: #FFF;
+    FONT-SIZE: 45PX;
+    FONT-WEIGHT: BOLD;
+    text-shadow: 0 0 9px #000;
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.card p {
+    font-size: 13px;
+}
+
+.card .member-img {
+    width: 100px;
+    height: 150px;
+    margin: 0 auto;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+.title {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.title::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    left: 0;
+    background-color: brown;
+}
+
+.title::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 0;
+    left: 0;
+    background-color: brown;
+}
+
+.title h3 {
+    background-color: #fff;
+    width: auto;
+    z-index: 9;
+    margin-left: 25px;
+}
+
+.card-pdf-title {
+    color: #07b02f;
+}
+
+.prev-content {
+    height: 400px;
+    background: url(../images/download-body-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: rgb(242, 61, 55);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #a10101;
+    border-radius: 25px;
+    border: 2px solid rgb(242, 61, 55);
+}
