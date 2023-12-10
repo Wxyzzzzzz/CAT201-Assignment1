@@ -1,42 +1,59 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Check if files were uploaded
-    if (isset($_POST['uploaded_file']) && is_array($_POST['uploaded_file'])) {
-        // Iterate through uploaded files
-        foreach ($_POST['uploaded_file'] as $filename) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['convert'])) {
+    // Continue with the conversion process
+    $uploadedFiles = $_POST['uploaded_files'];
+    $convertedFiles = [];
 
-            $location_output = "outputs/";
+    foreach ($uploadedFiles as $uploadedFile) {
+        $location_output = "outputs/";
 
-            // Specify convert path and output path
-            $pathinfo = pathinfo($filename);
-            $base = $pathinfo["filename"];
-            $converted_file = $base . "_converted." . ($pathinfo["extension"] === "pdf" ? "txt" : "pdf");
-            //$output_path = $location_output . $converted_file;
-            $output_path = __DIR__ . "/outputs/" . $converted_file;
+        // Specify convert path and output path
+        $pathinfo = pathinfo($uploadedFile);
+        $base = $pathinfo["filename"];
+        $converted_file = $base . "_converted." . ($pathinfo["extension"] === "pdf" ? "txt" : "pdf");
+        $output_path = $location_output . $converted_file;
 
-            // Specify the path to your JAR file
-            $jar_file_path = "C:/xampp/htdocs/cat201ver5.jar";
+        // Specify the path to your JAR file
+        $jar_file_path = "C:/xampp/htdocs/cat201ver4.jar";
 
-             // Use $temp_folder when constructing the conversion command
-             $temp_folder = __DIR__ . "/uploads";  // Replace with the actual path to your temporary directory
-             $convert_command = 'java -jar "' . $jar_file_path . '" pdfToTxt "' . $temp_folder . '/' . $filename . '" "' . $output_path . '"';
+        // Choose the operation based on file extension
+        $operation = ($pathinfo["extension"] === "pdf") ? "pdfToTxt" : "txtToPdf";
 
+        // Build the conversion command
+        $convert_command = "java -jar $jar_file_path $operation " . escapeshellarg(__DIR__ . "/uploads/$uploadedFile") . " " . escapeshellarg($output_path);
 
-            // Execute the conversion command
-            exec($convert_command, $output, $return_var);
+        // Execute the JAR file to perform the conversion
+        exec($convert_command, $output, $return_var);
 
-            // Use $temp_folder when moving the file
-            $upload_file_tmp_name = __DIR__ . "/uploads/" . $filename;
-            move_uploaded_file($temp_folder . '/' . $filename, $upload_file_tmp_name);
+        //** */ Debugging output
+        //echo "Convert command: $convert_command<br>";
+        //echo "Output: ";
+        //print_r($output);
+        //echo "Return var: $return_var<br>";
 
-            // Check if the conversion was successful
-            if ($return_var === 0) {
-            echo "Conversion successful for file: $filename<br>";
+        // Check if the conversion was successful
+        if ($return_var === 0 && file_exists($output_path)) {
+            // Move the converted file to "outputs" folder
+            $location_output = __DIR__ . "/outputs/" . $converted_file;
+            if (rename($output_path, $location_output)) {
+                echo "File '$uploadedFile' uploaded and converted successfully.<br>";
+                $convertedFiles[] = $converted_file; // Keep track of converted files
             } else {
-            echo "Conversion failed for file: $filename<br>";
-            // Print the output for debugging
-            print_r($output);
-                                }
-                            }
-                        }
-                    }
+                echo "Can't move converted file '$uploadedFile' to outputs folder.<br>";
+            }
+        } else {
+            echo "Conversion failed or converted file '$uploadedFile' does not exist.<br>";
+        }
+
+        // Separate the output of each conversion with a line break
+        echo "<br>";
+    }
+
+    // Redirect to download.php with all converted filenames
+    if (!empty($convertedFiles)) {
+        $convertedFilesParam = implode(",", $convertedFiles);
+        header("Location: download.php?converted_files=$convertedFilesParam");
+        exit();
+    }
+}
+?>
