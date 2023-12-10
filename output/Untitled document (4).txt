@@ -1,0 +1,767 @@
+SCHOOL OF COMPUTER SCIENCES
+ACADEMIC SESSION: 2023/2024
+CSE241/CMM341 FOUNDATIONS OF SOFTWARE ENGINEERING
+Software Engineering Project
+Project Report 1
+PREPARED FOR :
+Dr. Azleena Mohd Kassim
+Dr. lim chia yen
+PREPARED BY: GROUP 14
+1
+Team name: ABC
+SDG XX: SDG-7, "Affordable and Clean Energy
+Project title: EcoPower connect
+Student Name Matrix Number School Project Role
+MUEED HYDER MIR 160796 Computer science Leader
+MUHAMMAD ZAFRI
+BIN MOHD NIZAR
+159315 Computer science Software engineer
+AviniishDevar A/L
+Nadarajan
+22305436 Computer science Software engineer
+Wang Hanfeng 165405 Computer science Business analyst
+2
+MUHAMMAD
+NURUL IKMAL BIN
+SA’AD
+157455 Management Business Analyst
+Submission date:
+6 December 2023 (Week 7) / Friday
+3
+TABLE OF CONTENTS
+TABLE OF CONTENTS................................................................................................... 4
+LIST OF TABLES.............................................................................................................5
+LIST OF FIGURES........................................................................................................... 6
+1 Project Background.....................................................................................................7
+1.1 Problem background............................................................................................. 7
+1.2 Organization or system environment background…………………………………..8
+1.3 System overview………………………………………………………………………9
+1.3.1 System objectives……………………………………………………………..10
+1.3.2 System module breakdown………………………………………………….11
+1.4 Project planning……………………………………………………………………………13
+1.4.1 Project team introduction..................................................................................15
+1.4.2 Project team involvement…………………………………………………………18
+2 System Requirements............................................................................................... 21
+2.1 Functional requirements – User stories................................................................... 21
+2.2 Functional requirements – Use cases...................................................................... 23
+2.2.1 Use case list.................................................................................................... 23
+2.2.2 Use case diagram…........................................................................................36
+2.3 Non-functional requirements…………………………………………………………….38
+3 System Architecture and Design..............................................................................40
+4
+3.1 Architectural design………………………………………………………………………41
+3.1.1 Conceptual view……………………………………………………………………41
+3.1.2 Process view……………………………………………………………………….43
+REFERENCE..................................................................................................................00
+5
+LIST OF TABLES
+Table 1 System Module...............................................................................................12
+Table 2 Project Roles...................................................................................................17
+Table 3 Work Division……………………………………………………………….17
+Table 4 Use Case 1…………………………………………………………………...27
+Table 5 Use Case 2…………………………………………………………………...28
+Table 6 Use Case 3…………………………………………………………………...28
+Table 7 Use Case 4…………………………………………………………………...29
+Table 8 Use Case 5……………………………………………………………………30
+LIST OF FIGURES
+Figure 1 System
+Module......................................................................................................11
+Figure 2 Group
+Photo..........................................................................................................12
+Figure 3 Use case 1
+..............................................................................................................31
+Figure 4 Use case 2
+...............................................................................................................32
+Figure 5 Use case 3
+...............................................................................................................33
+6
+Figure 6 Use case 4
+...............................................................................................................34
+Figure 7 Use case 5
+................................................................................................................35
+Figure 8 Conceptual view
+....................................................................................................38
+Figure 9 Process view 1
+............................................................................................…………39
+Figure 10 Process view
+2.......................................................................................................40
+Figure 11 Process view 3
+........................................................................................................41
+Figure 12 Process view
+4.......................................................................................................42
+Figure 13 Process view 5
+...........................................................................................................43
+1. INTRODUCTION
+1.1 Problem background
+SDG-7, "Affordable and Clean Energy," is imperative as an estimate of over 800
+million people lack access to reliable electricity, (Wikipedia,
+2023https://en.wikipedia.org/wiki/Sustainable_Development_Goal_7). "Affordable and
+Clean Energy," the seventh Sustainable Development Goal (SDG-7) tackles a serious
+7
+worldwide energy dilemma. Over 800 million people are thought to live in a world
+without access to consistent electricity, which exacerbates poverty and reduces
+prospects for economic development and education. The majority of these areas
+without power are those that are either economically poor or rural.
+In addition, the current level of energy output around the world has a major role in the
+destruction of the environment. Burning fossil fuels like coal, oil, and natural gas is the
+primary source of energy generation, accounting for around 60%(LITTLETON,
+Colorado, Nov 30 (Reuters) 2023
+https://www.reuters.com/markets/commodities/fossil-fuels-still-dominate-global-power-s
+ystems-2023-11-30/ ), of the world's greenhouse gas emissions. Despite being the most
+widely used, these techniques seriously endanger the environment by causing habitat
+destruction, air pollution, and climate change.
+Furthermore, Global warming and environmental degradation have emerged as two
+of the most challenging and definitive issues confronting all countries, it is observed that
+non-renewable energy utilization and CO2 emission are associated inevitably(Journal of
+Cleaner Production. (2022)
+https://www.sciencedirect.com/science/article/abs/pii/S0959652621042323 ).
+Making the switch to renewable energy sources—like hydroelectric, solar, and wind
+power—is essential to achieving SDG-7 targets and environmental sustainability.
+Creating the infrastructure and technologies necessary to enable the production and
+delivery of inexpensive, clean energy is part of this shift. By accomplishing this, the
+8
+world's dependency on dangerous fuels might be greatly reduced, opening the way to a
+cleaner and sustainable energy future.
+1.2 Organization or system environment background
+The EnergyVanguard project is in the background of environmental pollution and lack
+of renewable energy, the purpose of the project is to solve environmental problems by
+the use of fossil fuels. With technological advancements and decreasing costs, the
+global demand for renewable resources is increasing. We are committed to funding this
+project, promoting the use of renewable resources, reducing carbon emissions, and
+creating a sustainable future.
+The EnergyVanguard initiative is in line with the goals outlined in significant
+international agreements, like the Paris Agreement, which aims to fortify the global
+response to the threat of climate change (United Nations, 2015
+https://www.un.org/climatechange/paris-agreement ), as part of the global reaction to
+climate change. In addition, the project will help fulfill Sustainable Development Goal 7
+of the UN, which aims to provide everyone with modern, affordable, dependable, and
+sustainable energy (United Nations, 2023
+https://www.un.org/sustainabledevelopment/energy/).
+EnergyVanguard seeks to act as a catalyst for change in the energy industry by
+incorporating state-of-the-art renewable technologies and encouraging creative energy
+9
+solutions. Our strategy is to back projects that show measurable gains in energy
+efficiency and carbon footprint reduction.
+1.3 System overview
+The EcoPower connect system is a platform for users to discover and buy renewable
+resources. Our system, EcoPower connect,will offer a user-friendly web-based interface
+and mobile app with a good user experience. The system will inform users about nearby
+clean energy sources companies，which have a broader range of clean energy
+products and services, such as energy-efficient appliances and green building
+materials. After the purchase is made, It can track the customers purchase details, and
+energy efficiency.
+1.3.1 System objectives
+Objective 1: Reduce Carbon Emissions Through Clean Energy:
+10
+By shifting the focus to clean energy, the system directly contributes to a reduction in
+the carbon footprint of energy consumption. This has the potential to slow climate
+change, improve air quality, and reduce health risks associated with pollution. It also
+supports the transition to a sustainable energy economy.
+Objective 2: Provide Affordable Energy Services
+Making energy services more affordable can significantly impact the economic
+well-being of individuals and communities. Lower energy costs mean that households
+can allocate more of their budget to other essential needs, contributing to overall
+poverty reduction. Affordability also increases the accessibility of clean energy,
+encouraging more widespread adoption.
+Objective 3: Increase Awareness of Renewable Energy and Energy Efficiency
+Increased awareness leads to informed decision-making among consumers, which can
+drive the demand for renewable energy sources and products. Educating the public
+about the benefits of energy efficiency can result in behavior change that contributes to
+energy conservation and sustainability goals.
+11
+Objective 4: Foster Community Engagement
+Engaged communities are more likely to come together to support clean energy
+initiatives, leading to stronger advocacy for environmental policies and shared
+responsibility in implementing sustainable practices. Community engagement can also
+stimulate local economies by promoting local clean energy businesses and creating
+jobs.
+1.3.2 System module breakdown
+Figure 1 - System Module
+MODULE MODULE NAME DESCRIPTION
+1. Energy Request
+This makes a request on the
+system from the user for a new
+energy source.
+12
+2. Energy Finder Locates and displays nearby
+clean energy providers based on
+user location.
+3. Track My Energy Allows users to track the status of
+their clean energy service
+requests.
+4. Eco Info Hub Provides educational resources
+on renewable energy and
+sustainability.
+5. Eco Community A platform for community
+discussions and engagement on
+clean energy topics.
+Table 1 - System Module
+1.4 Project planning
+13
+1.4.1 project team introduction
+Figure 2 - Group Photo
+14
+TeamEcoPower connect
+Members Biography
+Mueed Hyder Mir
+My name is Mueed Hyder mir, and I am from
+India.I am quite enthusiastic about the things
+I cherish and one of them is surely “people” .
+With that said, I admire doing something that
+helps the people around me in one way or
+another, which directly or indirectly
+contributes to my ambition to become an
+entrepreneur.
+As a project leader, I created a timeline to
+work on each section and guide my team
+members on every part of this project. I
+became the group representative to voice any
+queries about the project to the lecturer, and
+I hope we accomplish our project and each
+one of us can gain valuable knowledge and
+meaningful memories through this project.
+15
+My name is Muhammad Zafri Bin Mohd Nizar
+and I am from Malaysia. I am a very detailed
+software engineer because I always make
+sure my software works perfectly and also
+makes as few errors as possible. Moreover,
+most of my projects will always be completed
+on time.
+In this project, my role as software engineer. I
+am tasked with handling the Software design
+and implementation which involve a lot of
+specific design and functionality which can be
+helped in making this project satisfy our
+client’s needs when using it.
+Aviniish Devar A/L Nadarajan
+Hello! I'm Aviniish from Malaysia, a
+passionate Software Engineer dedicated to
+crafting innovative solutions. With a
+background in computer science, I am
+gaining years of experience in the software
+development landscape.
+In my role as a Software Engineer, I've
+contributed significantly to my team by
+leveraging my expertise in software and
+networking, enabling us to streamline
+development processes and deliver robust
+software solutions.
+Muhammad Nurul Ikmal bin
+Sa’ad
+Hi, my name is Muhammad Nurul Ikmal bin
+Sa'ad. I am a student from the School of
+Management, USM. Despite that, I have a
+deep interest in the field of computer science.
+By taking this subject, I hope that I can gain
+lots of knowledge and experience in the field
+of software engineering.
+In this project, I play the role of a Business
+Analyst. My contribution falls under the scope
+of providing details and insights in making
+decisions in order to make sure that
+EcoPower Connect system development
+satisfies the business requirements.
+16
+Wang Hanfeng
+Hello, I'm Wang Hanfeng, and I am from
+China. I am very happy to work on a
+project with several of my colleagues. I
+really like the atmosphere in our team,
+which makes our project work well.
+I’m the Business Analyst of EcoPower
+Connect, so I will do my best to help my
+team Gather detailed business
+requirements from existing documents or
+systems. In the meantime, I can Translate
+needs into detailed requirements that are
+clear, complete, consistent, and
+actionable for technical teams.
+1.4.2 Project team involvement
+a) Communication Method
+We will Mainly utilize whatsApp for quick informal discussions and reminders and webex to
+attend online meetings.
+b) meeting attendance
+Regular meetings will be scheduled weekly on Sundays at 10 AM. Attendance is mandatory for
+all scheduled meetings unless a team member notifies of their absence in advance. If a member
+cannot attend, they should inform the group at least 24 hours in advance and catch up by
+reviewing the meeting minutes.
+c) Running meetings
+Meetings will alternate between face-to-face and online formats, depending on availability and
+necessity. Face-to-face meetings will be held after each class . Online meetings will be conducted
+17
+via webex. The role of taking minutes/notes will rotate among team members for each meeting.
+Minutes of the meeting will be circulated via whatsApp within 24 hours of the meeting for
+everyone to review and add any additional comments.
+d) division of project roles
+Member name Project role
+Mueed Hyder Mir Leader
+Muhammad Zafri Bin Mohd Nizar Software Engineer
+Aviniish Devar A/L Nadarajan Software Engineer
+Muhammad Nurul Ikmal bin Sa’ad Business Analyst
+Wang Hanfeng Business Analyst
+Table 2 - Project Roles
+e) Division of work
+Module Module name person-in-charge
+1. Request Energy Access Wang Hanfeng
+2. Community Forum Zafri
+3. Energy Finder Mueed
+4. Track Energy Request Aviniish
+5. Informative Page Ikmal
+Table 3 - Work Division
+18
+2 System Requirements
+2.1 Functional requirements – User stories
+REQUEST ENERGY ACCESS MODULE
+TITLE: Finding and Using clean energy
+products
+PRIORITY: MUST
+As a user, I need to find and use clean energy products
+ACCEPTANCE CRITERIA:
+● Given that users realize the environmental impact of traditional energy
+sources, they want to use clean energy products.
+● When they search for clean energy products.
+● Then
+○ they will see a variety of clean energy product options.
+TITLE: Upload Company Information PRIORITY: SHOULD
+As a clean energy company, we need to be able to create a profile on the EcoPower
+Connect platform to show our services to customers.
+ACCEPTANCE CRITERIA:
+● Given a clean energy company has determined that EcoPower Connect is a
+suitable platform to reach more customers
+● When they complete the registration process and upload their company
+information
+● Then their profile will be recommended and shown to customers.
+TITLE: Resolving Clean Energy Product
+Issues
+PRIORITY: SHOULD
+As a user, I want to request after-sales service.
+ACCEPTANCE CRITERIA:
+19
+● Given users have purchased a clean energy product via the EcoPower
+Connect platform.
+● When there are some problems with clean energy products that are bought on
+the platform.
+● Then I can connect promptly with customer service from the product’s provider.
+TITLE: Users discuss in the forum PRIORITY: MUST
+As a user, I want to discuss with other users in the forum about Energy efficient
+appliances
+ACCEPTANCE CRITERIA:
+● Given a user who has experience with new energy sources
+● When I wish to share my experiences, and insights about using these new
+energy sources
+● Then go to a 'Community Discussions' or 'Knowledge Hub' section on the
+platform, and have the option to create a new discussion thread.
+TITLE: Register for an account PRIORITY: MUST
+As a user, I want to register for an account.
+ACCEPTANCE CRITERIA:
+● Given an interested user of Ecopower Connect
+● When they register for an account.
+● Then these input requests that will be accessed by the system.
+LOCATE NEARBY ENERGY REQUEST MODULE
+TITLE: Find Local Clean Energy PRIORITY:Must
+20
+Providers
+As a user, I want to find nearby clean energy providers so that I can switch to a
+sustainable energy source for my home.
+ACCEPTANCE CRITERIA:
+● Given I am logged into the system,
+● When I select the option to locate nearby energy sources,
+● Then
+○ the system should display a list of clean energy providers within my
+selected radius along with their details.
+TITLE: Provider Detail Expansion PRIORITY: Must
+As a user evaluating options, I want to expand the details of a listed energy provider
+to learn about their specific clean energy sources, their contacts, and services
+offered.
+ACCEPTANCE CRITERIA:
+● Given a list of energy providers,
+● When I select one,
+● Then
+○ I should see expanded information
+TITLE: Direct Contact with Providers PRIORITY: Must
+As a user ready to transition to clean energy, I want to contact providers directly
+through the platform to inquire further or initiate service setup.
+ACCEPTANCE CRITERIA:
+● Given I am viewing a provider’s details,
+● When I click on the contact option,
+● Then
+○ I should be able to send a message directly to the provider.
+TITLE:Map View of Energy Providers PRIORITY: Should
+As a user, I want to find nearby clean energy providers so that I can switch to a
+21
+sustainable energy source for my home.
+ACCEPTANCE CRITERIA:
+● Given I am logged into the system,
+● When I select the option to locate nearby energy sources,
+● Then
+○ the system should display a list of clean energy providers within my
+selected radius along with their details.
+TITLE: Energy Source Reviews and
+Ratings
+PRIORITY: Should
+As a potential clean energy customer, I want to read reviews and ratings for energy
+providers so that I can assess their reputation and service quality.
+ACCEPTANCE CRITERIA:
+● GivenI am viewing the details of an energy provider,
+● When I navigate to the reviews section,
+● Then
+○ I should be able to read existing customer reviews and see the
+provider's overall rating.
+TITLE: Save Favorite Energy Providers PRIORITY: Should
+As an environmentally conscious user, I want to save my favorite clean energy
+providers in my profile so that I can quickly access them later.
+ACCEPTANCE CRITERIA:
+● Given I have found a desirable energy provider,
+● When I click on a 'Save as Favorite' option,
+● Then
+○ the provider should be added to a favorites list in my user profile for
+easy future access.
+22
+TITLE: Receive Notifications for New
+Providers
+PRIORITY: Could
+As a user interested in clean energy options, I want to receive notifications when new
+energy providers are added within my vicinity so that I can stay updated on the latest
+options available to me.
+ACCEPTANCE CRITERIA:
+● Given I have opted in for notifications,
+● When a new energy provider is registered in the system within my set distance
+preferences,
+● Then
+○ I should receive a notification alerting me to the new provider.
+TRACK ENERGY REQUEST MODULE
+TITLE: Track Energy Location PRIORITY: 1
+As a user, I want to be able to track the energy efficiency of the products or services
+I've purchased, so that I can be aware of the location and when I will receive my
+products.
+ACCEPTANCE CRITERIA:
+● Given that a user on EcoPower Connect with previous clean energy
+purchases,
+● When user navigate to the "Energy Efficiency Tracking" section for a specific
+purchase,
+● Then
+○ They should see a map or information about the location and status of
+the purchased product or service delivery
+TITLE: Receive Notifications PRIORITY: 1
+As a user, I want to receive notifications or updates on the status of my recent clean
+energy purchase, so that I can stay informed about the progress of my order.
+23
+ACCEPTANCE CRITERIA:
+● Given that a user with a confirmed clean energy purchase,
+● When the purchase is confirmed,
+● Then
+○ They should receive notifications via preferred communication channel
+(e.g., email or mobile app) providing details about the confirmation,
+delivery status, estimated arrival time, or any delays.
+TITLE: View History PRIORITY: 2
+As a user, I want to be able to view a history of all my energy-related purchases, so
+that I can track my spending and make informed decisions about my energy
+consumption.
+ACCEPTANCE CRITERIA:
+● Given that a user with previous clean energy purchases,
+● When user navigate to the "Purchase History" section,
+● Then
+○ They should see a list of all previous energy-related purchases,
+including the date of purchase, product or service bought, and the
+amount spent.
+TITLE: Provide Feedback PRIORITY: 3
+As a user, I want the ability to provide feedback or reviews for the clean energy
+products and services I've purchased, so that I can share my experience with other
+users.
+ACCEPTANCE CRITERIA:
+● Given that a user with previous clean energy purchases,
+● When user navigate to the "Reviews" section for a specific product or service in
+purchase history,
+● Then
+○ They should have the ability to submit a review or feedback, including a
+rating and comments. Additionally, they should be able to view reviews
+from other users.
+ECO COMMUNITY MODULE
+24
+TITLE: Edit forum PRIORITY: 1
+As a user, I want to edit forums. So that I can change the forum details if i made a
+mistake in the forum
+ACCEPTANCE CRITERIA:
+● Given the user wants to edit forum
+● When they press on edit information
+● Then
+○ The forum can be edited.
+○ The forum will show an icon that it is edited.
+TITLE: View community forum PRIORITY: 1
+As a user, I want to view community forums. So that I can check on the forum created
+by the community
+ACCEPTANCE CRITERIA:
+● Given the user want to view community forum
+● When they scroll down.
+● Then
+○ They can view all the forum created by the communities.
+TITLE: View the overall amount of points PRIORITY: 2
+As a user, I want to view the overall amount of points. So that I can keep track of the
+points I obtained overall.
+ACCEPTANCE CRITERIA:
+● Given the user wants to view the overall amount of points.
+● When the user looks at the top right of the screen.
+● Then
+○ They may view the total amount of points accumulated.
+25
+INFORMATIVE PAGE
+26
+TITLE: Create a new forum PRIORITY: 1
+As a user, I want to create a new forum. So that I can give new information or
+discussion with other users.
+ACCEPTANCE CRITERIA:
+● Given the user wants to create a new forum.
+● When they press on the ‘+’ .
+● Then
+○ New forum can be created and uploaded.
+○ The user will be rewarded with points for each forum created.
+TITLE: Comment on the forum PRIORITY: 1
+As a user, I want to comment on the forum. So that I can ask the person posted the
+forum..
+ACCEPTANCE CRITERIA:
+● Given the user wants to comment on the forum.
+● When they press the ‘reply’ button under the forum.
+● Then
+○ The user can add new comment.
+TITLE: View rewards available PRIORITY: 2
+As a user, I want to view rewards available. So that I can exchange the points I
+obtained with rewards.
+ACCEPTANCE CRITERIA:
+● Given the user wants to view rewards available.
+● When they press on the reward icon on top right screen.
+● Then
+○ They will be redirected to all available rewards.
+TITLE: Quick start guide to use the
+software
+PRIORITY: 1
+As a user, I want to access a step-by-step guide on how the software works, so I can
+quickly start using it effectively.
+ACCEPTANCE CRITERIA:
+● Given a new user has successfully registered,
+● When they log in for the first time,
+● Then a quick start guide page will automatically appear to assist them in
+navigating and using the software effectively.
+TITLE: Get information about the benefits
+of clean energy benefits and why
+everyone should start using them
+PRIORITY: 1
+As a user, I want to get information regarding the benefits of clean energy, so that I
+can understand how the clean energy can give impacts to the environment.
+ACCEPTANCE CRITERIA:
+● Given a user already logged into the account,
+● When user navigate to the "Learn More About Clean Energy" section,
+● Then user can see clear information displaying the benefits of clean energy.
+TITLE: Get information about company
+background
+PRIORITY: 1
+As a user, I want to get information about the company background, so that I can
+understand its history, values, and mission, fostering trust and making informed
+decisions about engaging with its products or services.
+ACCEPTANCE CRITERIA:
+● Given a user already logged into the account,
+● When user navigate to the "About Us" section,
+● Then user can see detailed information about the company's background,
+mission, and vision.
+27
+TITLE: Get the information about the
+latest software updates
+PRIORITY: 2
+As a user, I want to access detailed information about each software update on the
+informative page, including release notes, bug fixes, and enhancements, so I can
+understand the impact and benefits of the update.
+ACCEPTANCE CRITERIA:
+● Given the software has undergone an update,
+● When the user logs into their account,
+● Then a "What's New" icon will appear on their homepage, guiding them to
+discover and explore the latest features and improvements.
+2.2 Functional requirements – Use cases
+2.2.1 Use case list
+Use Case ID Use Case Name Description
+PROFILE001 Edit forum Users can edit the forum created by
+them.
+PROFILE002 View community forum Users can view all the community
+forums created.
+PROFILE003 View the overall amount of
+points
+Users can view the amounts of
+point obtained overall
+PROFILE004 Create new forum Users can create new forums.
+PROFILE005 Comment on the forum Users can add comment on the
+forum.
+PROFILE005 View rewards available Users can view rewards available.
+Table 4 - Use Case 1
+28
+Use Case ID Use Case Name Description
+INFORM001 Quick start guide to use
+the software
+User can learn how to use the
+software
+INFORM002 Get information about the
+benefits of clean energy
+User can get information about the
+importants of clean energy
+INFORM003 Get information about
+company background
+User can understand about the
+company background
+INFORM004 Get the information about
+the latest software
+updates
+User can stay updated with the
+latest improvements and changes of
+the software
+Table 5- Use Case 2
+Use Case ID Use Case Name Description
+TRACK001 Track Notifications Users can track their energy request
+location.
+TRACK002 Receive Notifications Users can receive notifications on location or
+status of requested energy.
+TRACK003 View History Users can view the history of overall
+purchased energy.
+TRACK004 Provide Feedback Users can choose to provide feedback about
+purchased energy to help other buyers.
+Table 6 - Use Case 3
+29
+Use Case ID Use Case Name Description
+REQUEST001 Register for an account. User must create an account before
+the request can be accessed by the
+system.
+REQUEST002 Access user's search
+request
+User can get information of clean
+energy products.
+Table 7 - Use Case 4
+Use Case ID Use Case Name Description
+LOCATE001 Find clean energy user can search for clean energy
+providers based on specific criteria
+such as location or type of energy.
+LOCATE002 Login authentication User have to login Before accessing
+personalized features. This use case
+manages the verification of the user's
+credentials.
+LOCATE003 Direct Contact with
+Providers
+Users can directly reach out to clean
+energy providers for inquiries or to
+initiate service setup. This use case
+manages the communication interface
+between the user and the provider
+LOCATE004 Map View of Energy
+Providers
+Users can view the locations of clean
+energy providers on a map. This use
+case involves displaying a map with
+markers indicating the providers'
+locations.
+LOCATE005 Profile of Energy Providers Users can view detailed profiles of
+energy providers, which include
+information like services offered,
+pricing, and contact details. This use
+case handles fetching and displaying
+this information.
+LOCATE006 Review Users can leave reviews and ratings
+for energy providers they have
+interacted with or purchased from.
+30
+REQUEST003 Access user’s customer
+service request
+User can connect with customer
+service of companies.
+REQUEST004 Access user’s browse and
+upload
+User can browse and discuss with
+other users
+REQUEST005 Access and review
+company information
+request
+Company can show their products
+and services to customers.
+LOCATE007 Save Favorite Providers Users can save the details of their
+favorite energy provides to make the
+process of finding the same provider
+easy
+LOCATE008 Provide Detail Expansion users can get all the necessary
+information about a provider such as
+certifications, user testimonials, or
+more in-depth service descriptions
+LOCATE009 Receive notifications Users can opt to receive updates or
+notifications about new energy
+providers
+LOCATE0010 New Providers Users get the updates on the list of
+new providers whenever a new
+provider is added.
+Table 8 - Use Case 5
+2.2.2 Use case diagram
+31
+Request Energy Access Module
+Figure 3 - Use Case 1
+32
+Locate energy module
+Figure 4 - Use Case 2
+Community Forum Module
+33
+Figure 5 - Use Case 3
+34
+Track Request
+Figure 6 - Use Case
+Community Forum Module
+35
+Figure 7 - Use Case 5
+36
+2.3 Non-functional requirements
+1. Usability: The system should feature an intuitive and user-friendly interface, making
+it easily navigable for users of varying technical skills. The design should be accessible,
+with clear labeling and logical navigation paths. The average number of errors made by
+experienced users shall not exceed 3 per hour of system use.
+2. Performance: The system must be capable of handling high user traffic and
+delivering information with minimal latency. It should ensure quick response times for
+searches and transactions. Pages on the system should load within 3 seconds, even
+during peak usage times.
+3. Security: The system should employ industry-standard encryption for all user data
+transactions and store sensitive data securely.
+4. Maintainability: The system shall be designed to allow for routine maintenance to be
+completed preferably during hours of least activity, not exceeding 2 hours per month.
+5. Scalability: The system should be scalable to accommodate a growing number of
+users and an expanding database of energy providers. The system shall be capable of
+scaling to support up to a 100% increase in user load within a two-year period without
+degradation of performance standards.
+6. Availability: The system shall be available for use 24/7, with maintenance windows
+37
+clearly communicated to users , scheduled during off-peak hours with a minimum of two
+weeks notice to users.
+7. Reliability: The system must have high availability and minimal downtime. It should
+include error handling and recovery mechanisms to ensure continuous service and
+maintain user trust. The system shall have an uptime of 99.5% over a given month,
+excluding scheduled maintenance windows.
+8. Integrity: The system shall perform automatic database backups every 24 hours to
+ensure no significant data loss in case of system failure.
+38
+3 System Architecture and Design
+3.1 Architectural design
+3.1.1 Conceptual view
+Figure 8 - Conceptual View
+39
+3.1.2 Process view
+Request Energy Access
+Figure 9: Process view 1
+40
+Community Forum
+Figure 10: Process view 2
+41
+44Informative Page
+Figure 11: Process view 3
+42
+Locate energy access
+Figure 12: Process view 4
+Reference：
+·Wikipedia, https://en.wikipedia.org/wiki/Sustainable_Development_Goal_7 ,2023
+43
+·LITTLETON, Colorado, Nov 30 (Reuters)
+https://www.reuters.com/markets/commodities/fossil-fuels-still-dominate-global-power-s
+ystems-2023-11-30/
+· (Journal of Cleaner ProductionVolume 333, 20 January 2022
+https://www.sciencedirect.com/science/article/abs/pii/S0959652621042323 )
+·(United Nations, 2015 https://www.un.org/climatechange/paris-agreement )
+· (United Nations, n.d. https://www.un.org/sustainabledevelopment/energy/)
+44
