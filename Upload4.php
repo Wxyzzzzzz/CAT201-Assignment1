@@ -72,7 +72,7 @@ if (!empty($invalidUploads)) {
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Display the convert button
-        echo '<form method="post" enctype="multipart/form-data" action="convert5.php">';
+        echo '<form method="post" enctype="multipart/form-data" action="convert6.php">';
         foreach ($_FILES['image']['name'] as $uploadedFile) {
             echo '<input type="hidden" name="uploaded_file[]" value="' . htmlspecialchars($uploadedFile) . '">';
         }
